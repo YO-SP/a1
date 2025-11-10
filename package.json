@@ -1,21 +1,23 @@
 {
   "name": "app-starter-project-with-webpack",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start-dev": "webpack serve --config webpack.dev.js",
-    "serve": "http-server dist"
-  },
-  "keywords": [],
+  "description": "A simple web app starter with Webpack and GitHub Pages support",
   "author": "YOUR_NAME <yourmail@mail.com>",
   "license": "ISC",
+  "scripts": {
+    "dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "preview": "http-server dist",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [],
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
     "babel-loader": "^10.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.3",
     "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.9.2",
