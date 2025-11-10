@@ -21,6 +21,10 @@ module.exports = {
           filename: 'images/[name][ext][query]', // simpan gambar di folder dist/images/
         },
       },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'], // agar CSS bisa dibundle saat development
+      },
     ],
   },
   plugins: [
@@ -29,20 +33,19 @@ module.exports = {
       filename: 'index.html',
     }),
     new CopyWebpackPlugin({
-  patterns: [
-    {
-      from: path.resolve(__dirname, 'src/public/'),
-      to: path.resolve(__dirname, 'dist/'),
-      globOptions: {
-        ignore: ['**/index.html'],
-      },
-    },
-    {
-      from: path.resolve(__dirname, 'sw.js'), // tambahkan ini
-      to: path.resolve(__dirname, 'dist/'),   // salin ke dist root
-    },
-  ],
-}),
-
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/public/'),
+          to: path.resolve(__dirname, 'dist/'),
+          globOptions: {
+            ignore: ['**/index.html'], // index.html sudah ditangani oleh HtmlWebpackPlugin
+          },
+        },
+        {
+          from: path.resolve(__dirname, 'sw.js'), // pastikan file ini ada di root folder proyek
+          to: path.resolve(__dirname, 'dist/'),   // salin ke dist root
+        },
+      ],
+    }),
   ],
 };
