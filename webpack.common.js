@@ -21,10 +21,6 @@ module.exports = {
           filename: 'images/[name][ext][query]', // simpan gambar di folder dist/images/
         },
       },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'], // jika kamu punya file CSS
-      },
     ],
   },
   plugins: [

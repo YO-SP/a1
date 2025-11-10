@@ -1,5 +1,6 @@
 import '../styles/styles.css';
 import App from './pages/app';
+import registerServiceWorker from './utils/sw-register.js'; // ⬅️ Tambahan
 
 document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem('authToken');
@@ -25,3 +26,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+// === Tambahan aman untuk Push Notification ===
+registerServiceWorker();
+
+// === Meminta izin notifikasi dari user ===
+if ('Notification' in window && 'serviceWorker' in navigator) {
+  Notification.requestPermission().then((permission) => {
+    if (permission === 'granted') {
+      console.log('Izin notifikasi diberikan ✅');
+    } else if (permission === 'denied') {
+      console.warn('Izin notifikasi ditolak 🚫');
+    } else {
+      console.log('Izin notifikasi belum dipilih ⚠️');
+    }
+  });
+}
