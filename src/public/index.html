@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.png" />
+    <title>App</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon.png" />
+
+    <!-- Leaflet CSS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
 
-    <title>App</title>
+    <!-- Tambahkan stylesheet utama -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <meta name="theme-color" content="#2196f3" />
   </head>
+
   <body>
     <header>
       <div class="main-header container">
@@ -24,7 +33,6 @@
             <li><a href="#/login">Login</a></li>
             <li><a href="#/register">Register</a></li>
             <li><a href="#/logout">Logout</a></li>
-           
           </ul>
         </nav>
 
@@ -33,9 +41,11 @@
     </header>
 
     <main id="main-content" class="main-content"></main>
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    ></script>
-    <script type="module" src="./scripts/index.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- File utama JavaScript -->
+    <script type="module" src="../scripts/index.js"></script>
   </body>
 </html>
