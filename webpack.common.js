@@ -13,19 +13,6 @@ module.exports = {
     clean: true, // membersihkan dist sebelum build baru
   },
   module: {
-    rules: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'images/[name][ext][query]', // simpan gambar di folder dist/images/
-        },
-      },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'], // agar CSS bisa dibundle saat development
-      },
-    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
