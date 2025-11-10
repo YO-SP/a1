@@ -42,7 +42,7 @@ module.exports = {
           },
         },
         {
-          from: path.resolve(__dirname, 'sw.js'), // pastikan file ini ada di root folder proyek
+          from: path.resolve(__dirname, 'src/public/sw.js'), // pastikan file ini ada di root folder proyek
           to: path.resolve(__dirname, 'dist/'),   // salin ke dist root
         },
       ],
