@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
+    <title>Intermediate PT 1</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./favicon.png" />
+    <link rel="shortcut icon" href="./192.png" />
 
     <!-- Leaflet CSS -->
     <link
@@ -15,8 +15,10 @@
     />
 
     <!-- Tambahkan stylesheet utama -->
-    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
 
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="#2196f3" />
   </head>
 
@@ -47,5 +49,19 @@
 
     <!-- File utama JavaScript -->
     <script type="module" src="../scripts/index.js"></script>
+
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('./sw.js')
+          .then((reg) =>
+            console.log('✅ Service Worker registered with scope:', reg.scope)
+          )
+          .catch((err) =>
+            console.error('❌ Service Worker registration failed:', err)
+          );
+      }
+    </script>
   </body>
 </html>
